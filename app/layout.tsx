@@ -23,6 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sipkagroup.nz'),
   title: {
     default: "Sipka Group | Archaeologists of Property",
     template: "%s | Sipka Group",
