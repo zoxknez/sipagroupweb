@@ -74,6 +74,7 @@ export function Navbar() {
                   src="/images/logo.png"
                   alt="Sipka Group"
                   fill
+                  sizes="40px"
                   className="object-contain"
                   priority
                 />
