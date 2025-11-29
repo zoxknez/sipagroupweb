@@ -77,7 +77,7 @@ export function LoadingScreen() {
               className="h-1 bg-white/10 rounded-full overflow-hidden"
             >
               <motion.div
-                className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
+                className="h-full bg-gradient-to-r from-amber-500 to-orange-500"
                 style={{ width: `${Math.min(progress, 100)}%` }}
                 transition={{ duration: 0.1 }}
               />

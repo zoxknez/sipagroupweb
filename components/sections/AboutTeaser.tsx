@@ -19,7 +19,7 @@ export function AboutTeaser() {
   return (
     <section ref={containerRef} className="relative py-32 bg-black overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-950/20 via-transparent to-purple-950/20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-amber-950/20 via-transparent to-orange-950/20" />
 
       <div className="container mx-auto px-6 lg:px-12 relative">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -60,7 +60,7 @@ export function AboutTeaser() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-6 block"
+              className="text-amber-400 text-sm font-medium tracking-[0.2em] uppercase mb-6 block"
             >
               About Us
             </motion.span>
@@ -74,7 +74,7 @@ export function AboutTeaser() {
             >
               Long-Term Property
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
                 Investors
               </span>
             </motion.h2>
@@ -112,7 +112,7 @@ export function AboutTeaser() {
             >
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all group"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-amber-600 to-orange-600 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all group"
               >
                 Learn More
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

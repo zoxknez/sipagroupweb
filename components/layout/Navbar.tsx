@@ -108,7 +108,7 @@ export function Navbar() {
                     {link.label}
                   </span>
                   <motion.span
-                    className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500"
+                    className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500"
                     initial={{ width: 0 }}
                     animate={{ width: pathname === link.href ? '100%' : 0 }}
                     whileHover={{ width: '100%' }}
@@ -132,8 +132,8 @@ export function Navbar() {
                 className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full overflow-hidden group"
               >
                 {/* Glow effect */}
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-80 group-hover:opacity-100 transition-opacity" />
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
+                <span className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 opacity-80 group-hover:opacity-100 transition-opacity" />
+                <span className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
                 <span className="absolute inset-[1px] bg-black/50 rounded-full" />
                 
                 <span className="relative text-sm font-semibold text-white">
@@ -237,7 +237,7 @@ export function Navbar() {
                     href={companyInfo.clientPortalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-semibold"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 text-white font-semibold"
                   >
                     Client Portal
                     <ExternalLink className="w-4 h-4" />

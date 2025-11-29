@@ -118,7 +118,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-blue-400 text-sm font-medium tracking-[0.3em] uppercase mb-6 block"
+              className="text-amber-400 text-sm font-medium tracking-[0.3em] uppercase mb-6 block"
             >
               Get in Touch
             </motion.span>
@@ -169,8 +169,8 @@ export default function ContactPage() {
                     transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                     className="flex items-center gap-4 p-5 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <item.icon className="w-5 h-5 text-blue-400" />
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <item.icon className="w-5 h-5 text-amber-400" />
                     </div>
                     <div>
                       <p className="text-white/50 text-sm">{item.label}</p>
@@ -188,7 +188,7 @@ export default function ContactPage() {
                 className="p-6 rounded-2xl bg-white/5 border border-white/10"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Clock className="w-5 h-5 text-blue-400" />
+                  <Clock className="w-5 h-5 text-amber-400" />
                   <h3 className="text-lg font-semibold text-white">Office Hours</h3>
                 </div>
                 <div className="space-y-3">
@@ -206,7 +206,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-500/20"
+                className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-amber-600/20 to-yellow-600/20 border border-amber-500/20"
               >
                 <h3 className="text-lg font-semibold text-white mb-2">Existing Client?</h3>
                 <p className="text-white/60 text-sm mb-4">
@@ -216,7 +216,7 @@ export default function ContactPage() {
                   href={companyInfo.clientPortalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all"
                 >
                   Client Portal
                   <ExternalLink className="w-4 h-4" />
@@ -247,7 +247,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -262,7 +262,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -280,7 +280,7 @@ export default function ContactPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-colors"
                         placeholder="+64 21 123 4567"
                       />
                     </div>
@@ -295,7 +295,7 @@ export default function ContactPage() {
                         value={formData.subject}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-colors"
                         placeholder="Leasing inquiry"
                       />
                     </div>
@@ -311,7 +311,7 @@ export default function ContactPage() {
                       name="propertyInterest"
                       value={formData.propertyInterest}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-colors"
                     >
                       <option value="" className="bg-gray-900">Select a property type</option>
                       <option value="commercial" className="bg-gray-900">Commercial Office</option>
@@ -334,7 +334,7 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-colors resize-none"
                       placeholder="Tell us about your inquiry..."
                     />
                   </div>
@@ -347,7 +347,7 @@ export default function ContactPage() {
                       'w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold transition-all',
                       isSubmitting
                         ? 'bg-gray-600 cursor-not-allowed'
-                        : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg hover:shadow-blue-500/25'
+                        : 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white hover:shadow-lg hover:shadow-amber-500/25'
                     )}
                   >
                     {isSubmitting ? (

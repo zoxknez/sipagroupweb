@@ -40,7 +40,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-blue-400 text-sm md:text-base font-medium tracking-[0.3em] uppercase mb-6"
+            className="text-amber-400 text-sm md:text-base font-medium tracking-[0.3em] uppercase mb-6"
           >
             New Zealand Property Investment
           </motion.p>

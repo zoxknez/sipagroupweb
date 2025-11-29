@@ -14,8 +14,8 @@ interface PropertyDetailProps {
 export default function PropertyDetail({ property }: PropertyDetailProps) {
   const statusColors = {
     available: 'bg-green-500/20 text-green-400 border-green-500/30',
-    leased: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-    sold: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+    leased: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+    sold: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
   };
 
   // Get related properties (same category, excluding current)
@@ -124,8 +124,8 @@ export default function PropertyDetail({ property }: PropertyDetailProps) {
                         key={index}
                         className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10"
                       >
-                        <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
-                          <Check className="w-4 h-4 text-blue-400" />
+                        <div className="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center">
+                          <Check className="w-4 h-4 text-amber-400" />
                         </div>
                         <span className="text-white/80">{feature}</span>
                       </div>
@@ -143,7 +143,7 @@ export default function PropertyDetail({ property }: PropertyDetailProps) {
                   className="mb-12"
                 >
                   <h2 className="text-2xl font-bold text-white mb-6">Available Spaces</h2>
-                  <div className="p-6 rounded-2xl bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20">
+                  <div className="p-6 rounded-2xl bg-gradient-to-r from-green-500/10 to-amber-500/10 border border-green-500/20">
                     <ul className="space-y-3">
                       {property.vacantSpaces.map((space, index) => (
                         <li key={index} className="flex items-center gap-3 text-white/80">
@@ -218,7 +218,7 @@ export default function PropertyDetail({ property }: PropertyDetailProps) {
                 </div>
 
                 {/* Contact CTA */}
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-blue-500/20">
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-600/20 to-yellow-600/20 border border-amber-500/20">
                   <h3 className="text-xl font-bold text-white mb-3">Interested?</h3>
                   <p className="text-white/60 text-sm mb-6">
                     Contact us to learn more about this property or schedule a viewing.
@@ -226,7 +226,7 @@ export default function PropertyDetail({ property }: PropertyDetailProps) {
                   <div className="space-y-3">
                     <Link
                       href="/contact"
-                      className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all"
+                      className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all"
                     >
                       Contact Us
                     </Link>
@@ -281,7 +281,7 @@ export default function PropertyDetail({ property }: PropertyDetailProps) {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                       <div className="absolute bottom-4 left-4 right-4">
-                        <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
+                        <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
                           {relatedProperty.name}
                         </h3>
                         <p className="text-white/60 text-sm">{relatedProperty.location}</p>

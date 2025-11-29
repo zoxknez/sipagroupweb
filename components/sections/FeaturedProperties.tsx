@@ -15,8 +15,8 @@ interface PropertyCardProps {
 function PropertyCard({ property, index }: PropertyCardProps) {
   const statusColors = {
     available: 'bg-green-500',
-    leased: 'bg-blue-500',
-    sold: 'bg-purple-500',
+    leased: 'bg-amber-500',
+    sold: 'bg-orange-500',
   };
 
   return (
@@ -71,7 +71,7 @@ function PropertyCard({ property, index }: PropertyCardProps) {
 
           {/* Bottom info */}
           <div className="absolute bottom-0 left-0 right-0 p-5">
-            <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+            <h3 className="text-xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">
               {property.name}
             </h3>
             <div className="flex items-center gap-1 text-white/60 text-sm">
@@ -101,7 +101,7 @@ export function FeaturedProperties() {
   return (
     <section className="relative py-32 bg-gradient-to-b from-black via-gray-950 to-black overflow-hidden">
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,_var(--tw-gradient-stops))] from-blue-950/30 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,_var(--tw-gradient-stops))] from-amber-950/30 via-transparent to-transparent" />
 
       <div className="container mx-auto px-6 lg:px-12 relative">
         {/* Section header */}
@@ -112,7 +112,7 @@ export function FeaturedProperties() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <span className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-amber-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
               Our Portfolio
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">

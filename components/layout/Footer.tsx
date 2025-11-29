@@ -25,7 +25,7 @@ export function Footer() {
   return (
     <footer className="relative bg-black border-t border-white/10">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-amber-950/20 to-transparent pointer-events-none" />
 
       <div className="container mx-auto px-6 lg:px-12 relative">
         {/* Main footer content */}
@@ -55,7 +55,7 @@ export function Footer() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-600 to-orange-600 text-white text-sm font-semibold"
             >
               Client Portal
               <ExternalLink className="w-4 h-4" />
@@ -105,7 +105,7 @@ export function Footer() {
                   href={`mailto:${companyInfo.email}`}
                   className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm group"
                 >
-                  <Mail className="w-4 h-4 text-blue-400 group-hover:text-blue-300" />
+                  <Mail className="w-4 h-4 text-amber-400 group-hover:text-amber-300" />
                   {companyInfo.email}
                 </a>
               </li>
@@ -114,7 +114,7 @@ export function Footer() {
                   href={`tel:${companyInfo.phone.replace(/\s/g, '')}`}
                   className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm group"
                 >
-                  <Phone className="w-4 h-4 text-blue-400 group-hover:text-blue-300" />
+                  <Phone className="w-4 h-4 text-amber-400 group-hover:text-amber-300" />
                   {companyInfo.phone}
                 </a>
               </li>
@@ -123,12 +123,12 @@ export function Footer() {
                   href={`tel:${companyInfo.mobile.replace(/\s/g, '')}`}
                   className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm group"
                 >
-                  <Phone className="w-4 h-4 text-blue-400 group-hover:text-blue-300" />
+                  <Phone className="w-4 h-4 text-amber-400 group-hover:text-amber-300" />
                   {companyInfo.mobile}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/60 text-sm">
-                <MapPin className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
                 <span>{companyInfo.address}</span>
               </li>
             </ul>

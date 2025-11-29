@@ -50,11 +50,11 @@ function Counter({ value, label, delay }: CounterProps) {
       className="text-center"
     >
       <div className="relative">
-        <span className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+        <span className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent">
           {count}{suffix}
         </span>
         {/* Glow effect */}
-        <div className="absolute inset-0 blur-2xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 -z-10" />
+        <div className="absolute inset-0 blur-2xl bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-amber-500/20 -z-10" />
       </div>
       <p className="text-white/60 text-sm md:text-base mt-4 tracking-wide uppercase">
         {label}
@@ -67,7 +67,7 @@ export function Stats() {
   return (
     <section id="stats-section" className="relative py-32 bg-black overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-950/20 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-950/20 via-transparent to-transparent" />
       
       {/* Grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem]" />

@@ -118,7 +118,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-blue-400 text-sm font-medium tracking-[0.3em] uppercase mb-6 block"
+              className="text-amber-400 text-sm font-medium tracking-[0.3em] uppercase mb-6 block"
             >
               About Us
             </motion.span>
@@ -131,7 +131,7 @@ export default function AboutPage() {
             >
               Archaeologists of
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400">
                 Property
               </span>
             </motion.h1>
@@ -153,7 +153,7 @@ export default function AboutPage() {
             >
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all group"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all group"
               >
                 View Our Portfolio
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -185,8 +185,8 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center mx-auto mb-4 border border-white/10">
-                  <stat.icon className="w-7 h-7 text-blue-400" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 flex items-center justify-center mx-auto mb-4 border border-white/10">
+                  <stat.icon className="w-7 h-7 text-amber-400" />
                 </div>
                 <p className="text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</p>
                 <p className="text-white/50 text-sm">{stat.label}</p>
@@ -232,7 +232,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-6 block"
+                className="text-amber-400 text-sm font-medium tracking-[0.2em] uppercase mb-6 block"
               >
                 About Us
               </motion.span>
@@ -278,7 +278,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our People Section */}
-      <section className="py-32 bg-gradient-to-b from-black via-blue-950/10 to-black overflow-hidden">
+      <section className="py-32 bg-gradient-to-b from-black via-amber-950/10 to-black overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -287,7 +287,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center mb-16"
           >
-            <span className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-amber-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
               Our People
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -382,7 +382,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-32 bg-gradient-to-b from-transparent via-blue-950/10 to-transparent">
+      <section className="py-32 bg-gradient-to-b from-transparent via-amber-950/10 to-transparent">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -391,7 +391,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-amber-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
               Our Values
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -409,7 +409,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <value.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
@@ -430,7 +430,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <span className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-amber-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
               Our Journey
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -441,7 +441,7 @@ export default function AboutPage() {
           {/* Timeline */}
           <div className="relative">
             {/* Center line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-blue-500/30 to-transparent hidden lg:block" />
+            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-amber-500/30 to-transparent hidden lg:block" />
 
             <div className="space-y-12 lg:space-y-0">
               {timeline.map((item, index) => (
@@ -458,14 +458,14 @@ export default function AboutPage() {
                   {/* Content */}
                   <div className={`lg:w-1/2 ${index % 2 === 0 ? 'lg:text-right lg:pr-16' : 'lg:pl-16'}`}>
                     <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
-                      <span className="text-blue-400 text-2xl font-bold">{item.year}</span>
+                      <span className="text-amber-400 text-2xl font-bold">{item.year}</span>
                       <h3 className="text-xl font-bold text-white mt-2 mb-3">{item.title}</h3>
                       <p className="text-white/60">{item.description}</p>
                     </div>
                   </div>
 
                   {/* Center dot */}
-                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-500 border-4 border-black" />
+                  <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-amber-500 border-4 border-black" />
 
                   {/* Empty space for other side */}
                   <div className="hidden lg:block lg:w-1/2" />
@@ -477,7 +477,7 @@ export default function AboutPage() {
       </section>
 
       {/* Vision Section */}
-      <section className="py-32 bg-gradient-to-b from-transparent to-blue-950/20">
+      <section className="py-32 bg-gradient-to-b from-transparent to-amber-950/20">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -486,13 +486,13 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center"
           >
-            <span className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-6 block">
+            <span className="text-amber-400 text-sm font-medium tracking-[0.2em] uppercase mb-6 block">
               Company Vision
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
               Building a Legacy for
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-400">
                 Future Generations
               </span>
             </h2>
@@ -523,7 +523,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-amber-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
               Our Partners
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
@@ -542,9 +542,9 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-500/30 transition-all text-center"
+                className="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-amber-500/30 transition-all text-center"
               >
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors flex items-center justify-center gap-2">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors flex items-center justify-center gap-2">
                   {partner.name}
                   <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </h3>

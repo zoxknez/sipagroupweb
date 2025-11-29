@@ -24,8 +24,8 @@ interface PropertyCardProps {
 function PropertyCard({ property, index }: PropertyCardProps) {
   const statusColors = {
     available: 'bg-green-500/20 text-green-400 border-green-500/30',
-    leased: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-    sold: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+    leased: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
+    sold: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
   };
 
   return (
@@ -79,7 +79,7 @@ function PropertyCard({ property, index }: PropertyCardProps) {
 
           {/* Bottom content */}
           <div className="absolute bottom-0 left-0 right-0 p-5">
-            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
               {property.name}
             </h3>
             <div className="flex items-center gap-2 text-white/60 text-sm">
@@ -130,7 +130,7 @@ export default function PortfolioPage() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-blue-400 text-sm font-medium tracking-[0.3em] uppercase mb-4 block">
+          <span className="text-amber-400 text-sm font-medium tracking-[0.3em] uppercase mb-4 block">
             Our Portfolio
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
@@ -158,7 +158,7 @@ export default function PortfolioPage() {
                 className={cn(
                   'flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300',
                   activeCategory === category.value
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/25'
+                    ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-lg shadow-amber-500/25'
                     : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white border border-white/10'
                 )}
               >
