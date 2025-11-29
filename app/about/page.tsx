@@ -278,7 +278,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our People Section */}
-      <section className="py-32 bg-gradient-to-b from-black via-blue-950/10 to-black">
+      <section className="py-32 bg-gradient-to-b from-black via-blue-950/10 to-black overflow-hidden">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -299,6 +299,85 @@ export default function AboutPage() {
               staff to meet your maintenance requirements at all times.
             </p>
           </motion.div>
+
+          {/* Family Photo Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden group col-span-2 row-span-2"
+            >
+              <Image
+                src="/images/team/family_portrait.jpg"
+                alt="Sipka Family Portrait"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <p className="text-white font-semibold">The Sipka Family</p>
+                <p className="text-white/60 text-sm">Building a legacy together</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="relative aspect-square rounded-2xl overflow-hidden group"
+            >
+              <Image
+                src="/images/team/brothers.jpg"
+                alt="Sipka Brothers"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative aspect-square rounded-2xl overflow-hidden group"
+            >
+              <Image
+                src="/images/team/family_formal.jpg"
+                alt="Family Formal Portrait"
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="relative aspect-[2/1] rounded-2xl overflow-hidden group col-span-2"
+            >
+              <Image
+                src="/images/team/team.jpg"
+                alt="Sipka Group Team"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <p className="text-white font-semibold">Our Team</p>
+                <p className="text-white/60 text-sm">Professional staff ready to serve</p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

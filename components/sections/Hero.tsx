@@ -3,39 +3,12 @@
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 import dynamic from 'next/dynamic';
-import { ImageCarousel } from '@/components/ui/ImageCarousel';
 
 // Dynamically import 3D scene to avoid SSR issues
 const CityScene = dynamic(
   () => import('@/components/3d/CityScene').then((mod) => mod.CityScene),
   { ssr: false }
 );
-
-// Property images for carousel
-const propertyImages = [
-  '/images/properties/110_symonds_st.jpg',
-  '/images/properties/canterbury_arcade.jpg',
-  '/images/properties/67_symonds_st.jpg',
-  '/images/properties/ascension_wine_estate.jpg',
-  '/images/properties/sipka_building.jpg',
-  '/images/properties/7_city_rd.jpg',
-  '/images/properties/blackburn_apartments.jpg',
-  '/images/properties/hutt_rd_thordon.jpg',
-  '/images/properties/phoenix_gardens.jpg',
-  '/images/properties/matamata_retail_building.jpg',
-];
-
-const propertyImagesReverse = [
-  '/images/properties/57_symonds_st.jpg',
-  '/images/properties/ranchhod_sipka_house.jpg',
-  '/images/properties/sipka_house.jpg',
-  '/images/properties/columbia_apartments.jpg',
-  '/images/properties/81_portland_rd_remuera.jpg',
-  '/images/properties/karaka_st_takapuna.jpg',
-  '/images/properties/160_candia_rd_henderson_heights.jpg',
-  '/images/properties/sunshine_bay_queenstown.jpg',
-  '/images/properties/liverpool_st_land.jpg',
-];
 
 export function Hero() {
   const scrollToContent = () => {
@@ -46,18 +19,16 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden">
       {/* 3D Background */}
-      <div className="absolute inset-0">
-        <CityScene />
-      </div>
+      <CityScene />
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent pointer-events-none z-10" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50 pointer-events-none z-10" />
 
       {/* Content */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6 pt-20">
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -108,44 +79,28 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Image Carousels at bottom */}
-      <div className="absolute bottom-24 left-0 right-0 z-20 space-y-4">
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 1.8 }}
-        >
-          <ImageCarousel images={propertyImages} direction="left" speed={40} />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 2 }}
-        >
-          <ImageCarousel images={propertyImagesReverse} direction="right" speed={35} />
-        </motion.div>
-      </div>
-
       {/* Scroll indicator */}
       <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 2.2 }}
+        transition={{ duration: 0.8, delay: 2 }}
         onClick={scrollToContent}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-1 text-white/40 hover:text-white/60 transition-colors cursor-pointer"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-white/40 hover:text-white/60 transition-colors cursor-pointer"
       >
         <span className="text-xs tracking-widest uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <ChevronDown className="w-5 h-5" />
+          <ChevronDown className="w-6 h-6" />
         </motion.div>
       </motion.button>
 
       {/* Corner decorations */}
       <div className="absolute top-20 left-6 w-20 h-20 border-l-2 border-t-2 border-white/10 z-20" />
       <div className="absolute top-20 right-6 w-20 h-20 border-r-2 border-t-2 border-white/10 z-20" />
+      <div className="absolute bottom-20 left-6 w-20 h-20 border-l-2 border-b-2 border-white/10 z-20" />
+      <div className="absolute bottom-20 right-6 w-20 h-20 border-r-2 border-b-2 border-white/10 z-20" />
     </section>
   );
 }
