@@ -310,7 +310,7 @@ export default function AboutPage() {
               className="relative aspect-[4/3] rounded-2xl overflow-hidden group col-span-2 row-span-2"
             >
               <Image
-                src="/images/team/family_portrait.jpg"
+                src="/images/team/slika_1.png"
                 alt="Sipka Family Portrait"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -331,7 +331,7 @@ export default function AboutPage() {
               className="relative aspect-square rounded-2xl overflow-hidden group"
             >
               <Image
-                src="/images/team/brothers.jpg"
+                src="/images/team/slika_2.png"
                 alt="Sipka Brothers"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
@@ -348,7 +348,7 @@ export default function AboutPage() {
               className="relative aspect-square rounded-2xl overflow-hidden group"
             >
               <Image
-                src="/images/team/family_formal.jpg"
+                src="/images/team/slika_3.png"
                 alt="Family Formal Portrait"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
@@ -365,7 +365,7 @@ export default function AboutPage() {
               className="relative aspect-[2/1] rounded-2xl overflow-hidden group col-span-2"
             >
               <Image
-                src="/images/team/team.jpg"
+                src="/images/team/slika_4.png"
                 alt="Sipka Group Team"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
