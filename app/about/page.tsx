@@ -4,29 +4,42 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Users, Target, Eye, Heart, Building2, Shield, Clock, Award } from 'lucide-react';
+import { ArrowRight, Users, Target, Eye, Heart, Building2, Shield, Clock, Award, ExternalLink } from 'lucide-react';
 import { companyInfo } from '@/lib/data/properties';
 
 const values = [
   {
     icon: Users,
     title: 'Family-Oriented',
-    description: 'As a family business, we bring personal care and long-term commitment to every property and relationship.',
+    description: 'Our strength comes from a family-oriented business. Future generations will carry on the legacy of the Sipka Group as we lay the foundation rocks for the future.',
   },
   {
     icon: Target,
-    title: 'Strategic Focus',
-    description: 'We target prominent positions and undervalued assets, seeing potential where others see challenges.',
+    title: 'Archaeologists of Property',
+    description: 'We focus on prominent positions and undervalued assets. By breathing new life into buildings, we restore them to their former glory.',
   },
   {
     icon: Eye,
     title: 'Active Management',
-    description: 'Direct property management enables us to respond efficiently and effectively to tenant needs.',
+    description: 'By actively managing our properties directly, we focus on tenant demands in a more efficient and effective way.',
   },
   {
     icon: Heart,
     title: 'Customer-Focused',
-    description: 'Our experienced team provides professional maintenance services with high standards.',
+    description: 'Our people are customer-focused and provide the best results. We have professional staff to meet your maintenance requirements at all times.',
+  },
+];
+
+const partners = [
+  {
+    name: 'Ascension Wine Estate',
+    url: 'http://ascensionwine.co.nz/',
+    description: 'Premium wine estate partnership',
+  },
+  {
+    name: 'Soundcraft',
+    url: 'http://soundcraft.co.nz/',
+    description: 'Telecommunications & security partner',
   },
 ];
 
@@ -34,32 +47,32 @@ const timeline = [
   {
     year: '2005',
     title: 'Foundation',
-    description: 'Sipka Holdings Ltd established in Auckland, beginning our property investment journey.',
+    description: 'Sipka Holdings Ltd established in Auckland, beginning our property investment journey alongside our telecommunications and security business.',
   },
   {
     year: '2010',
     title: 'Portfolio Growth',
-    description: 'Expanded into commercial office buildings along Symonds Street, Auckland.',
+    description: 'Expanded into commercial office buildings along Symonds Street, Auckland CBD.',
   },
   {
     year: '2015',
     title: 'Diversification',
-    description: 'Added residential properties and development sites to create a balanced portfolio.',
+    description: 'Added residential properties and development sites to create a balanced, risk-minimized portfolio.',
   },
   {
     year: '2018',
     title: 'Canterbury Arcade',
-    description: 'Restored the historic Canterbury Arcade, showcasing our expertise in revitalizing heritage buildings.',
+    description: 'Restored the historic Canterbury Arcade on Queen Street Auckland, a testament to our success as archaeologists of property.',
   },
   {
     year: '2020',
     title: 'Regional Expansion',
-    description: 'Extended our reach to Wellington, Queenstown, and Matamata.',
+    description: 'Extended our reach to Wellington, Queenstown, and Matamata with hospitality and development properties.',
   },
   {
     year: '2024',
-    title: 'Continued Growth',
-    description: 'Managing 20+ properties across four regions, continuing our family legacy.',
+    title: 'Family Legacy Continues',
+    description: 'Managing 20+ properties across four regions, laying the foundation for future generations.',
   },
 ];
 
@@ -207,7 +220,7 @@ export default function AboutPage() {
               >
                 <p className="text-white font-semibold mb-2">Canterbury Arcade</p>
                 <p className="text-white/60 text-sm">
-                  A testament to our expertise in restoring heritage buildings to their former glory.
+                  A testament to our success in breathing new life back into heritage buildings.
                 </p>
               </motion.div>
             </motion.div>
@@ -221,7 +234,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-6 block"
               >
-                Our Story
+                About Us
               </motion.span>
 
               <motion.h2
@@ -231,7 +244,7 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold text-white mb-8"
               >
-                Discovering Hidden Value in New Zealand Real Estate
+                Archaeologists of Property
               </motion.h2>
 
               <motion.div
@@ -242,23 +255,50 @@ export default function AboutPage() {
                 className="space-y-6 text-white/70"
               >
                 <p>
-                  Sipka Group describes itself as &ldquo;archaeologists of property,&rdquo; focusing on 
-                  prominent positions and undervalued or underperforming assets. We see beyond 
-                  the surface to discover the hidden potential in every building.
+                  As archaeologists of property, we focus on prominent positions and undervalued 
+                  and underperforming assets. By breathing new life back into these buildings, 
+                  we are able to renovate them and bring them back to their former glory. 
+                  The Canterbury Arcade on Queen Street Auckland is a testament to this success.
                 </p>
                 <p>
-                  With almost two decades of experience, including operating a telecommunications 
-                  and security business in New Zealand, our team brings diverse expertise to 
-                  property investment.
+                  We further attract new tenants to achieve the highest standard for all our tenants. 
+                  Our experience expands almost two decades, including successfully operating a 
+                  telecommunications and security business in New Zealand.
                 </p>
                 <p>
-                  Our strategy is simple but effective: meet tenant demands while maintaining 
-                  a diverse property portfolio to minimize risk. By actively managing our 
-                  properties directly, we respond efficiently to every need.
+                  Our strategy is to meet tenants&apos; demands and maintain a diverse property 
+                  portfolio to minimise risk. We strive to deliver a unique service to our tenant base 
+                  by actively managing our properties directly. This enables us to focus on tenant 
+                  demands in a more efficient and effective way.
                 </p>
               </motion.div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Our People Section */}
+      <section className="py-32 bg-gradient-to-b from-black via-blue-950/10 to-black">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center mb-16"
+          >
+            <span className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+              Our People
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              A Family-Oriented Property Group
+            </h2>
+            <p className="text-white/70 text-lg">
+              Sipka Group of companies is a family-oriented property group. Our people are 
+              customer-focused and provide the best results. We have professional and experienced 
+              staff to meet your maintenance requirements at all times.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -368,7 +408,7 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <span className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-6 block">
-              Our Vision
+              Company Vision
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
               Building a Legacy for
@@ -378,9 +418,10 @@ export default function AboutPage() {
               </span>
             </h2>
             <p className="text-white/60 text-lg mb-10 max-w-2xl mx-auto">
-              As long-term property investors, we aim to acquire more properties within 
-              New Zealand and abroad. We strive to become the best by leveraging our 
-              family-oriented strength so that future generations may continue our legacy.
+              Sipka Group are long-term property investors and our vision is to acquire more 
+              properties within New Zealand and abroad and to become the best. Our strength 
+              comes from a family-oriented business so future generations may carry on the 
+              legacy of the Sipka Group as we lay the foundation rocks for the future.
             </p>
             <Link
               href="/contact"
@@ -390,6 +431,48 @@ export default function AboutPage() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section className="py-32 border-t border-white/10">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="text-blue-400 text-sm font-medium tracking-[0.2em] uppercase mb-4 block">
+              Our Partners
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
+              Trusted Partnerships
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            {partners.map((partner, index) => (
+              <motion.a
+                key={partner.name}
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group p-8 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-500/30 transition-all text-center"
+              >
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors flex items-center justify-center gap-2">
+                  {partner.name}
+                  <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </h3>
+                <p className="text-white/50 text-sm">{partner.description}</p>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </section>
     </div>

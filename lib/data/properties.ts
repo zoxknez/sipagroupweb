@@ -563,7 +563,7 @@ export const companyInfo = {
   name: 'Sipka Group',
   legalName: 'Sipka Holdings Ltd',
   tagline: 'Archaeologists of Property',
-  description: 'A family-oriented property investment group focusing on both commercial and residential real estate across New Zealand.',
+  description: 'As archaeologists of property, we focus on prominent positions and undervalued and underperforming assets. By breathing new life back into these buildings, we are able to renovate them and bring them back to their former glory.',
   phone: '09 309 3037',
   mobile: '021 800 800',
   email: 'alex@sipkagroup.nz',
@@ -571,7 +571,7 @@ export const companyInfo = {
   postalAddress: 'PO Box 8161 Symonds St, Auckland 1150',
   clientPortalUrl: 'https://sipkagroup.vercel.app/portal',
   partners: [
-    { name: 'Ascension Wine Estate', url: '#' },
-    { name: 'Soundcraft', url: '#' },
+    { name: 'Ascension Wine Estate', url: 'http://ascensionwine.co.nz/' },
+    { name: 'Soundcraft', url: 'http://soundcraft.co.nz/' },
   ],
 };
