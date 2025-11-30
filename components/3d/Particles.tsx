@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
@@ -24,27 +24,39 @@ function generateParticlePositions(count: number, seed: number = 42): Float32Arr
   return positions;
 }
 
-// Pre-generate positions
-const PARTICLE_COUNT = 500;
-const particlePositions = generateParticlePositions(PARTICLE_COUNT);
+// Pre-generate positions for desktop and mobile
+const PARTICLE_COUNT_DESKTOP = 500;
+const PARTICLE_COUNT_MOBILE = 100;
+const particlePositionsDesktop = generateParticlePositions(PARTICLE_COUNT_DESKTOP);
+const particlePositionsMobile = generateParticlePositions(PARTICLE_COUNT_MOBILE);
 
-export function Particles() {
+interface ParticlesProps {
+  isMobile?: boolean;
+}
+
+export function Particles({ isMobile = false }: ParticlesProps) {
   const pointsRef = useRef<THREE.Points>(null);
+  
+  const positions = useMemo(() => 
+    isMobile ? particlePositionsMobile : particlePositionsDesktop
+  , [isMobile]);
 
   useFrame((state) => {
     if (!pointsRef.current) return;
     
     const time = state.clock.elapsedTime;
-    pointsRef.current.rotation.y = time * 0.02;
-    pointsRef.current.rotation.x = Math.sin(time * 0.1) * 0.05;
+    // Slower animation on mobile
+    const speed = isMobile ? 0.01 : 0.02;
+    pointsRef.current.rotation.y = time * speed;
+    pointsRef.current.rotation.x = Math.sin(time * 0.1) * (isMobile ? 0.02 : 0.05);
   });
 
   return (
-    <Points ref={pointsRef} positions={particlePositions} stride={3} frustumCulled={false}>
+    <Points ref={pointsRef} positions={positions} stride={3} frustumCulled={false}>
       <PointMaterial
         transparent
         color="#60a5fa"
-        size={0.15}
+        size={isMobile ? 0.2 : 0.15}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}

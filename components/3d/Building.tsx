@@ -10,9 +10,10 @@ import type { Property } from '@/lib/data/properties';
 interface BuildingProps {
   property: Property;
   index: number;
+  isMobile?: boolean;
 }
 
-export function Building({ property, index }: BuildingProps) {
+export function Building({ property, index, isMobile = false }: BuildingProps) {
   const groupRef = useRef<THREE.Group>(null);
   const meshRef = useRef<THREE.Mesh>(null);
   const glowMaterialRef = useRef<THREE.MeshBasicMaterial>(null);
@@ -22,22 +23,27 @@ export function Building({ property, index }: BuildingProps) {
 
   const { height, width, depth, color, emissiveColor, position } = property.building3D;
 
-  // Create geometries (memoized)
+  // Create geometries (memoized) - simpler for mobile
   const geometry = useMemo(() => new THREE.BoxGeometry(width, height, depth), [width, height, depth]);
-  const edgesGeometry = useMemo(() => new THREE.EdgesGeometry(geometry), [geometry]);
-  const glowGeometry = useMemo(() => new THREE.BoxGeometry(width + 0.3, height + 0.3, depth + 0.3), [width, height, depth]);
+  const edgesGeometry = useMemo(() => isMobile ? null : new THREE.EdgesGeometry(geometry), [geometry, isMobile]);
+  const glowGeometry = useMemo(() => isMobile ? null : new THREE.BoxGeometry(width + 0.3, height + 0.3, depth + 0.3), [width, height, depth, isMobile]);
 
-  // Animation
+  // Animation - simplified for mobile
   useFrame((state) => {
     if (!groupRef.current || !meshRef.current) return;
 
     const time = state.clock.elapsedTime;
     
-    // Floating animation
-    const floatOffset = Math.sin(time * 0.5 + index * 0.5) * 0.15;
+    // Floating animation - slower and smaller on mobile
+    const floatSpeed = isMobile ? 0.3 : 0.5;
+    const floatAmount = isMobile ? 0.08 : 0.15;
+    const floatOffset = Math.sin(time * floatSpeed + index * 0.5) * floatAmount;
     groupRef.current.position.y = floatOffset;
 
-    // Hover effects
+    // Skip hover effects on mobile for performance
+    if (isMobile) return;
+
+    // Hover effects - desktop only
     const targetScale = hovered ? 1.05 : 1;
     meshRef.current.scale.lerp(new THREE.Vector3(targetScale, targetScale, targetScale), 0.1);
 
@@ -86,47 +92,53 @@ export function Building({ property, index }: BuildingProps) {
           position={[0, height / 2, 0]}
           onClick={handleClick}
           onPointerEnter={() => {
+            if (isMobile) return;
             setHovered(true);
             document.body.style.cursor = 'pointer';
           }}
           onPointerLeave={() => {
+            if (isMobile) return;
             setHovered(false);
             document.body.style.cursor = 'auto';
           }}
-          castShadow
-          receiveShadow
+          castShadow={!isMobile}
+          receiveShadow={!isMobile}
         >
           <meshStandardMaterial
             color={color}
-            metalness={0.7}
-            roughness={0.2}
-            envMapIntensity={1}
+            metalness={isMobile ? 0.3 : 0.7}
+            roughness={isMobile ? 0.5 : 0.2}
+            envMapIntensity={isMobile ? 0.5 : 1}
           />
         </mesh>
 
-        {/* Glow effect */}
-        <mesh geometry={glowGeometry} position={[0, height / 2, 0]}>
-          <meshBasicMaterial
-            ref={glowMaterialRef}
-            color={emissiveColor}
-            transparent
-            opacity={0}
-            side={THREE.BackSide}
-          />
-        </mesh>
+        {/* Glow effect - desktop only */}
+        {!isMobile && glowGeometry && (
+          <mesh geometry={glowGeometry} position={[0, height / 2, 0]}>
+            <meshBasicMaterial
+              ref={glowMaterialRef}
+              color={emissiveColor}
+              transparent
+              opacity={0}
+              side={THREE.BackSide}
+            />
+          </mesh>
+        )}
 
-        {/* Edge wireframe */}
-        <lineSegments geometry={edgesGeometry} position={[0, height / 2, 0]}>
-          <lineBasicMaterial
-            ref={edgesMaterialRef}
-            color={emissiveColor}
-            transparent
-            opacity={0.3}
-          />
-        </lineSegments>
+        {/* Edge wireframe - desktop only */}
+        {!isMobile && edgesGeometry && (
+          <lineSegments geometry={edgesGeometry} position={[0, height / 2, 0]}>
+            <lineBasicMaterial
+              ref={edgesMaterialRef}
+              color={emissiveColor}
+              transparent
+              opacity={0.3}
+            />
+          </lineSegments>
+        )}
 
-        {/* Building label on hover */}
-        {hovered && (
+        {/* Building label on hover - desktop only */}
+        {!isMobile && hovered && (
           <Html
             position={[0, height + 3, 0]}
             center
@@ -141,11 +153,13 @@ export function Building({ property, index }: BuildingProps) {
         )}
       </group>
 
-      {/* Ground indicator */}
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.01, 0]} receiveShadow>
-        <planeGeometry args={[width + 2, depth + 2]} />
-        <meshStandardMaterial color={color} transparent opacity={0.1} metalness={0.5} roughness={0.5} />
-      </mesh>
+      {/* Ground indicator - desktop only */}
+      {!isMobile && (
+        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.01, 0]} receiveShadow>
+          <planeGeometry args={[width + 2, depth + 2]} />
+          <meshStandardMaterial color={color} transparent opacity={0.1} metalness={0.5} roughness={0.5} />
+        </mesh>
+      )}
     </group>
   );
 }
