@@ -71,7 +71,7 @@ export function Navbar() {
                 className="relative w-10 h-10 overflow-hidden rounded-lg"
               >
                 <Image
-                  src="/images/logo.png"
+                  src="/logo.png"
                   alt="Sipka Group"
                   fill
                   sizes="40px"

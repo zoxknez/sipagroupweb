@@ -35,7 +35,7 @@ export function Footer() {
             <Link href="/" className="inline-flex items-center gap-3 mb-6">
               <div className="relative w-12 h-12 overflow-hidden rounded-lg">
                 <Image
-                  src="/images/logo.png"
+                  src="/logo.png"
                   alt="Sipka Group"
                   fill
                   className="object-contain"
