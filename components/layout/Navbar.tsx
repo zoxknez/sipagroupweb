@@ -18,20 +18,43 @@ const navLinks = [
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const magnetRef = useRef<HTMLAnchorElement>(null);
   const [magnetPosition, setMagnetPosition] = useState({ x: 0, y: 0 });
 
-  // Handle scroll
+  // Handle scroll - hide on scroll down, show on scroll up
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      setIsScrolled(currentScrollY > 50);
+      
+      // Don't hide navbar if mobile menu is open
+      if (isMobileMenuOpen) {
+        setIsVisible(true);
+        return;
+      }
+      
+      // Show navbar when at the top
+      if (currentScrollY < 50) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down - hide navbar
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up - show navbar
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY, isMobileMenuOpen]);
 
   // Close mobile menu when clicking on links - handled in Link onClick
 
@@ -52,8 +75,8 @@ export function Navbar() {
     <>
       <motion.header
         initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        animate={{ y: isVisible ? 0 : -100 }}
+        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           isScrolled
@@ -79,11 +102,11 @@ export function Navbar() {
                   priority
                 />
               </motion.div>
-              <div className="hidden sm:block">
-                <span className="text-xl font-bold text-white tracking-tight">
+              <div>
+                <span className="text-lg sm:text-xl font-bold text-white tracking-tight">
                   SIPKA
                 </span>
-                <span className="text-xl font-light text-white/60 tracking-tight ml-1">
+                <span className="text-lg sm:text-xl font-light text-white/60 tracking-tight ml-1">
                   GROUP
                 </span>
               </div>
@@ -186,12 +209,44 @@ export function Navbar() {
               </motion.a>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden relative z-10 p-2 text-white"
-              aria-label="Toggle menu"
-            >
+            {/* Mobile Available Spaces + Menu Button */}
+            <div className="md:hidden flex items-center gap-2">
+              <motion.a
+                href={companyInfo.clientPortalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                animate={{ 
+                  scale: [1, 1.05, 1],
+                  boxShadow: [
+                    '0 0 10px rgba(245, 158, 11, 0.3)',
+                    '0 0 20px rgba(245, 158, 11, 0.6)',
+                    '0 0 10px rgba(245, 158, 11, 0.3)'
+                  ]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity, 
+                  ease: 'easeInOut'
+                }}
+                className="relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full overflow-hidden text-xs"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 opacity-90" />
+                <span className="absolute inset-[1px] bg-black/40 rounded-full" />
+                {/* Pulse dot */}
+                <motion.span
+                  className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-green-500 rounded-full"
+                  animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                />
+                <span className="relative font-semibold text-white">Spaces</span>
+                <ExternalLink className="relative w-3 h-3 text-white/80" />
+              </motion.a>
+              
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="relative z-10 p-2 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-lg shadow-amber-500/30"
+                aria-label="Toggle menu"
+              >
               <AnimatePresence mode="wait">
                 {isMobileMenuOpen ? (
                   <motion.div
@@ -201,7 +256,7 @@ export function Navbar() {
                     exit={{ opacity: 0, rotate: 90 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <X className="w-6 h-6" />
+                    <X className="w-6 h-6 text-white" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -211,11 +266,12 @@ export function Navbar() {
                     exit={{ opacity: 0, rotate: -90 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Menu className="w-6 h-6" />
+                    <Menu className="w-6 h-6 text-white" />
                   </motion.div>
                 )}
               </AnimatePresence>
-            </button>
+              </button>
+            </div>
           </div>
         </nav>
       </motion.header>
