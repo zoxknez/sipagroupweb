@@ -210,7 +210,7 @@ export function Navbar() {
             </div>
 
             {/* Mobile Available Spaces + Menu Button */}
-            <div className="md:hidden flex items-center gap-3 ml-auto">
+            <div className="md:hidden flex items-center gap-4">
               <motion.a
                 href={companyInfo.clientPortalUrl}
                 target="_blank"
