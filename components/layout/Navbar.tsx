@@ -127,14 +127,57 @@ export function Navbar() {
                 rel="noopener noreferrer"
                 onMouseMove={handleMagnetMove}
                 onMouseLeave={handleMagnetLeave}
-                animate={{ x: magnetPosition.x, y: magnetPosition.y }}
-                transition={{ type: 'spring', stiffness: 150, damping: 15 }}
+                animate={{ 
+                  x: magnetPosition.x, 
+                  y: magnetPosition.y,
+                  scale: [1, 1.05, 1],
+                  boxShadow: [
+                    '0 0 20px rgba(245, 158, 11, 0.4)',
+                    '0 0 40px rgba(245, 158, 11, 0.8)',
+                    '0 0 20px rgba(245, 158, 11, 0.4)'
+                  ]
+                }}
+                transition={{ 
+                  x: { type: 'spring', stiffness: 150, damping: 15 },
+                  y: { type: 'spring', stiffness: 150, damping: 15 },
+                  scale: { duration: 2, repeat: Infinity, ease: 'easeInOut' },
+                  boxShadow: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
+                }}
                 className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full overflow-hidden group"
               >
+                {/* Animated glow ring */}
+                <motion.span 
+                  className="absolute inset-[-2px] rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400"
+                  animate={{ 
+                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                    opacity: [0.7, 1, 0.7]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
+                  style={{ backgroundSize: '200% 200%' }}
+                />
                 {/* Glow effect */}
                 <span className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 opacity-80 group-hover:opacity-100 transition-opacity" />
-                <span className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
+                <motion.span 
+                  className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 blur-xl"
+                  animate={{ opacity: [0.5, 0.9, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                />
                 <span className="absolute inset-[1px] bg-black/50 rounded-full" />
+                
+                {/* Pulse dot indicator */}
+                <motion.span
+                  className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full"
+                  animate={{ 
+                    scale: [1, 1.3, 1],
+                    opacity: [1, 0.7, 1]
+                  }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                <motion.span
+                  className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"
+                  animate={{ scale: [1, 2, 1], opacity: [0.7, 0, 0.7] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: 'easeOut' }}
+                />
                 
                 <span className="relative text-sm font-semibold text-white">
                   Available Spaces
