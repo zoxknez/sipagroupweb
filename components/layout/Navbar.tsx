@@ -210,7 +210,7 @@ export function Navbar() {
             </div>
 
             {/* Mobile Available Spaces + Menu Button */}
-            <div className="md:hidden flex items-center gap-4">
+            <div className="md:hidden flex items-center flex-1 justify-end gap-4">
               <motion.a
                 href={companyInfo.clientPortalUrl}
                 target="_blank"
@@ -228,7 +228,7 @@ export function Navbar() {
                   repeat: Infinity, 
                   ease: 'easeInOut'
                 }}
-                className="relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full overflow-hidden text-xs"
+                className="relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full overflow-hidden text-xs mr-auto ml-auto"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 opacity-90" />
                 <span className="absolute inset-[1px] bg-black/40 rounded-full" />
