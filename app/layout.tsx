@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
@@ -76,6 +77,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
