@@ -57,7 +57,7 @@ export function Footer() {
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-600 to-orange-600 text-white text-sm font-semibold"
             >
-              Client Portal
+              Available Spaces
               <ExternalLink className="w-4 h-4" />
             </motion.a>
           </div>

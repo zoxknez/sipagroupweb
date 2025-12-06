@@ -118,7 +118,7 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Client Portal Button */}
+            {/* Available Spaces Button */}
             <div className="hidden md:block">
               <motion.a
                 ref={magnetRef}
@@ -137,7 +137,7 @@ export function Navbar() {
                 <span className="absolute inset-[1px] bg-black/50 rounded-full" />
                 
                 <span className="relative text-sm font-semibold text-white">
-                  Client Portal
+                  Available Spaces
                 </span>
                 <ExternalLink className="relative w-4 h-4 text-white/80 group-hover:text-white transition-colors" />
               </motion.a>
@@ -239,7 +239,7 @@ export function Navbar() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 text-white font-semibold"
                   >
-                    Client Portal
+                    Available Spaces
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </motion.div>

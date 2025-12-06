@@ -201,16 +201,16 @@ export default function ContactPage() {
                 </div>
               </motion.div>
 
-              {/* Client Portal CTA */}
+              {/* Available Spaces CTA */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
                 className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-amber-600/20 to-yellow-600/20 border border-amber-500/20"
               >
-                <h3 className="text-lg font-semibold text-white mb-2">Existing Client?</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">Looking for Space?</h3>
                 <p className="text-white/60 text-sm mb-4">
-                  Access your tenant portal for maintenance requests and documents.
+                  Browse our available commercial and industrial spaces for lease.
                 </p>
                 <a
                   href={companyInfo.clientPortalUrl}
@@ -218,7 +218,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all"
                 >
-                  Client Portal
+                  Available Spaces
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </motion.div>

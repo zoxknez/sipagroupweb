@@ -569,7 +569,7 @@ export const companyInfo = {
   email: 'alex@sipkagroup.nz',
   address: '67 Symonds St, Grafton, Auckland',
   postalAddress: 'PO Box 8161 Symonds St, Auckland 1150',
-  clientPortalUrl: 'https://sipkagroup.vercel.app/portal',
+  clientPortalUrl: 'https://sipkagroup.vercel.app/available-spaces',
   partners: [
     { name: 'Ascension Wine Estate', url: 'http://ascensionwine.co.nz/' },
     { name: 'Soundcraft', url: 'http://soundcraft.co.nz/' },

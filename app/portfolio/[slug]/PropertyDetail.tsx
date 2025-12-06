@@ -236,7 +236,7 @@ export default function PropertyDetail({ property }: PropertyDetailProps) {
                       rel="noopener noreferrer"
                       className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors"
                     >
-                      Client Portal
+                      Available Spaces
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </div>
