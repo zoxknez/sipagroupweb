@@ -42,7 +42,7 @@ export function LoadingScreen() {
               className="relative w-24 h-24"
             >
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Sipka Group"
                 fill
                 className="object-contain"
