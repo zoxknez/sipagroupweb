@@ -23,9 +23,9 @@ interface PropertyCardProps {
 
 function PropertyCard({ property, index }: PropertyCardProps) {
   const statusColors = {
-    available: 'bg-green-500/20 text-green-400 border-green-500/30',
-    leased: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
-    sold: 'bg-orange-500/20 text-orange-400 border-orange-500/30',
+    available: 'bg-green-600 text-white border-green-500 shadow-md',
+    leased: 'bg-amber-600 text-white border-amber-500 shadow-md',
+    sold: 'bg-red-600 text-white border-red-500 shadow-md',
   };
 
   return (
@@ -53,7 +53,7 @@ function PropertyCard({ property, index }: PropertyCardProps) {
           {/* Status badge */}
           <div className="absolute top-4 left-4">
             <span className={cn(
-              'px-3 py-1.5 rounded-full text-xs font-medium capitalize border backdrop-blur-sm',
+              'px-3 py-1.5 rounded-full text-xs font-bold capitalize border backdrop-blur-sm',
               statusColors[property.status]
             )}>
               {property.status}
@@ -62,7 +62,7 @@ function PropertyCard({ property, index }: PropertyCardProps) {
 
           {/* Category badge */}
           <div className="absolute top-4 right-4">
-            <span className="px-3 py-1.5 rounded-full text-xs font-medium text-white/80 bg-white/10 backdrop-blur-sm border border-white/20 capitalize">
+            <span className="px-3 py-1.5 rounded-full text-xs font-bold text-white bg-black/60 backdrop-blur-md border border-white/30 capitalize shadow-md">
               {property.category}
             </span>
           </div>
